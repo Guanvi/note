@@ -6,7 +6,7 @@
 - `你也可以将多个shell命令放入文件中作为程序执行.这些文件被称为shell脚本.你在命令行上执行的任何命令都可放进一个shell脚本中作为一组命令执行.这为创建那种需要把几个命令放在一起来工作的工具提供了便利`
 <br/>
 <br/>
-><small>在Linux系统上,通常有好几种Linux shell可用.不同的shell有不同的特性,有些更利于创建脚本,有些则更利于管理进程.<br/>所有Linux发行版默认的shell都是bash shell. bash shell由GNU项目开发,被当作标准Unix shell---Bourne shell(以创建者的名字命名)的替代品.bash shell的名称就是针对Bourne shell的拼写所玩的一个文字游戏,称为Bourne again shell</small>
+> <small>在Linux系统上,通常有好几种Linux shell可用.不同的shell有不同的特性,有些更利于创建脚本,有些则更利于管理进程.<br/>所有Linux发行版默认的shell都是bash shell. bash shell由GNU项目开发,被当作标准Unix shell---Bourne shell(以创建者的名字命名)的替代品.bash shell的名称就是针对Bourne shell的拼写所玩的一个文字游戏,称为Bourne again shell</small>
 
 |shell|描述|
 |---|---|
