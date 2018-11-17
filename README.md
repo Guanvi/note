@@ -10,3 +10,12 @@
 
 
 `dnf install ncurses-compat-libs`
+
+
+- 查看安装的VMware
+
+`vmware-installer -l`
+
+- 卸载VMware
+
+`vmware-installer --uninstall-product vmware-workstation`
