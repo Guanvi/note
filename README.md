@@ -28,6 +28,5 @@ vim /etc/my.cnf.d/mariadb-server.cnf
 character-set-server=utf8
 vim /etc/mycnf.d/clients.cnf
 在[client]下面添加
-vim /etc/mycnf.d/clients.cnf
-
+character-set-server=utf8
 ```
