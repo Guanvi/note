@@ -19,3 +19,15 @@
 - 卸载VMware
 
 `vmware-installer --uninstall-product vmware-workstation`
+
+
+- 解决MariaDB中文乱码问题
+```
+vim /etc/my.cnf.d/mariadb-server.cnf
+在[mysqld]下面添加
+character-set-server=utf8
+vim /etc/mycnf.d/clients.cnf
+在[client]下面添加
+vim /etc/mycnf.d/clients.cnf
+
+```
