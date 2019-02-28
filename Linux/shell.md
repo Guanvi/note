@@ -18,3 +18,18 @@
    `$@` $*的一种精巧变体，它不使用IFS环境变量，所以即使IFS为空，参数也不会挤在一起。
 
    > Linux程序设计 p25
+
+
+
+
+---
+- 文件描述符0,1,2
+   0		stdin
+   1		stdout
+   2		stderr
+
+   - 将stderr转为stdout，使得两者都被定向到同一个文件中
+
+   `cmd > out.txt 2>&1`
+   `cmd &> out.txt`
+
