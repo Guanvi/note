@@ -28,3 +28,6 @@
  `vim /etc/mycnf.d/clients.cnf` <br/>
 在[client]下面添加 <br/>
 `character-set-server=utf8` <br/>
+
+- gnome顶栏透明
+ `安装Dynamic Top Bar并replace "global.screen" with "global.workspace_manager" in extension.js to get it running on 3.30`
