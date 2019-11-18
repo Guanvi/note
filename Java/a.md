@@ -25,15 +25,14 @@
 		包作用域(package)是指一个类允许访问同一个package的没有public、private修饰的class以及没有public、protected、private修饰的字段和方法
 		```
 - 继承
-	```
-	继承是面向对象编程的一种强大的代码复用方式
-	Java只允许单继承，所有类最终的根类是Object
-	protected允许子类访问父类的字段和方法
-	子类的构造方法可以通过super()调用父类的构造方法
-	可以安全地向上转型为更抽象的类型
-	可以强制向下转型，最好借助instanceof判断
-	子类和父类的关系是is，has关系不能用继承
-	```
+	
+	> 继承是面向对象编程的一种强大的代码复用方式。  
+	> Java只允许单继承，所有类最终的根类是Object。  
+	> protected允许子类访问父类的字段和方法。  
+	> 子类的构造方法可以通过super()调用父类的构造方法。   
+	> 可以安全地向上转型为更抽象的类型。   
+	> 可以强制向下转型，最好借助instanceof判断。   
+	> 子类和父类的关系是is，has关系不能用继承。    
 - 多态
 	
 	- 多态
@@ -57,136 +56,110 @@
 		```
 - 抽象
 	- 抽象类和抽象方法
-		```
-		使用abstract修饰的类就是抽象类,抽象类无法被实例化，从抽象类继承的子类必须实现抽象方法
-		使用abstract修饰的方法是抽象方法，它只有定义，没有实现。抽象方法定义了子类必须实现的接口规范
-		如果不实现抽象方法，则该子类仍是一个抽象类
-		面向抽象编程使得调用者只关心抽象方法的定义，不关心子类的具体实现
-		```
+		> 使用abstract修饰的类就是抽象类,抽象类无法被实例化，从抽象类继承的子类必须实现抽象方法。    
+		> 使用abstract修饰的方法是抽象方法，它只有定义，没有实现。抽象方法定义了子类必须实现的接口规范。   
+		> 如果不实现抽象方法，则该子类仍是一个抽象类。  
+		> 面向抽象编程使得调用者只关心抽象方法的定义，不关心子类的具体实现。
+		
 	- 接口
-		```
-		Java的接口（interface）定义了纯抽象规范，一个类可以实现多个接口；
-		接口也是数据类型，适用于向上转型和向下转型；
-		接口的所有方法都是抽象方法，接口不能定义实例字段；
-		interface是可以有静态字段的，并且静态字段必须为final类型
-		实际上，因为interface的字段只能是public static final类型，所以我们可以把这些修饰符都去掉
-		接口可以定义default方法（JDK>=1.8）。
-		```
+		> Java的接口（interface）定义了纯抽象规范，一个类可以实现多个接口；  
+		> 接口也是数据类型，适用于向上转型和向下转型；
+		> 接口的所有方法都是抽象方法，接口不能定义实例字段；  
+		> interface是可以有静态字段的，并且静态字段必须为final类型;  
+		> 实际上，因为interface的字段只能是public static final类型，所以我们可以把这些修饰符都去掉  
+		> 接口可以定义default方法（JDK>=1.8）。  
+		
 ---
+
+
+			
+             
+                  
+          
+
+			
+
 
 ### String
-- Java字符串String是不可变对象
-- String常用方法
-
-	- equals()  
-
-		```
-		比较字符串的内容是否相同
-		s1.equals(s2)
-		```
-	- equalsIgnoreCase()  
-		```
-		忽略大小写的比较
-		```
-	- contains()
   
-		```
-		是否包含某个子串 
-		"Hello".contains("ll");
-		```
-
-	- indexOf()  
-		```
-		"Hello".indexOf("l"); //2
-		```
-
-	- lastIndexOf()  
-		```
-		"Hello".lastIndexOf("l"); //3
-		```
-	- startsWith()  
-		```
-		"Hello".startsWith("He"); //true
-		```
-	- endsWith()  
-
-		```
-		"Hello".endsWith("lo");//true
-		```
-
-	- sbustring()    
-		```
-		返回子串
-		"Hello".substring(2); //"llo"  
-		"Hello".substring(2, 4); "ll"
-		```
-
-	- isEmpty()` <small>和</small> `isBlank()`  
-		```
-		"".isEmpty(); // true，因为字符串长度为0  
-		"  ".isEmpty(); // false，因为字符串长度不为0
-		"  \n".isBlank(); // true，因为只包含空白字符
-		" Hello ".isBlank(); // false，因为包含非空白字符
-		```
-
-	- replace()  
-		```
-		替换子串
-		String s = "hello";
-		s.replace('l', 'w'); // "hewwo"，所有字符'l'被替换为'w'
-		s.replace("ll", "~~"); // "he~~o"，所有子串"ll"被替换为"~~"
-		```
-
-	- split()  
-		```
-		分割字符串
-		String s = "A,B,C,D";
-		String[] ss = s.split("\\,"); // {"A", "B", "C", "D"}
-		```
-
-	- join()  
-		```
-		拼接字符串
-		String[] arr = {"A", "B", "C"};
-		String s = String.join("***", arr); // "A***B***C"
-		```
-
-	- valueOf()  
-		```
-		类型转换
-		String.valueOf(123); // "123"
-		String.valueOf(45.67); // "45.67"
-		String.valueOf(true); // "true"
-		String.valueOf(new Object()); // 类似java.lang.Object@636be97c
-		```
-
-	- toCharArray()  
-		```
-		转换为char[]
-		char[] cs = "Hello".toCharArray(); // String -> char[]
-		String s = new String(cs); // char[] -> String
-		```
-
-	- getBytes()  
-
-		```
-		字符串编码
-		byte[] b1 = "Hello".getBytes(); // 按ISO8859-1编码转换，不推荐
-		byte[] b2 = "Hello".getBytes("UTF-8"); // 按UTF-8编码转换
-		byte[] b2 = "Hello".getBytes("GBK"); // 按GBK编码转换
-		byte[] b3 = "Hello".getBytes(StandardCharsets.UTF_8); // 按UTF-8编码转换
-
-		把已知编码的byte[]转换为String
-		byte[] b = ...
-		String s1 = new String(b, "GBK"); // 按GBK转换
-		String s2 = new String(b, StandardCharsets.UTF_8); // 按UTF-8转换
-		```
-	- 
+- 常用方法
+	```Java   
+	boolean equals(Object obj) //是否相等
+	boolean equalsIgnoreCase(String str) //是否相等，不区分大小写
+	boolean contains(String str) //是否包含
+	boolean startsWith(String str) //是否以str开头
+	boolean endsWith(String str) //是否以str结尾
+	boolean isEmpty() //是否为空
+	public int length () //返回此字符串的长度
+	public String concat (String str) //将指定的字符串连接到该字符串的末尾
+	public char charAt (int index) //返回指定索引处的char值
+	public int indexOf (String str) //返回指定子字符串第一次出现在该字符串内的索引
+	public String substring (int beginIndex) //返回一个子字符串，从beginIndex 开始截取字符串到字符串结尾。
+	public String substring (int beginIndex, int endIndex) //返回一个子字符串，从beginIndex到endIndex 截取字符串。含beginIndex，不含endIndex
+	byte[] getBytes() //使用平台的默认字符集将该String编码转换为新的字节数组
+	char[] toCharArray() //将此字符串转换为新的字符数组
+	static String valueOf(char[] chs) //字符数组转换成字符串
+	static String valueOf(int i) //整型转换成字符串
+	String toLowerCase() //变成大写
+	String toUpperCase() //变成小写
+	public String replace (CharSequence target, CharSequence replacement) //将与 target 匹配的字符串使用 replacement 字符串替换
+	public String[] split(String regex) //将此字符串按照给定的regex（规则）拆分为字符串数组
+	String trim() //去除字符串两空格
+	int compareTo(String str) //按字典顺序比较两个字符串
+	int compareToIgnoreCase(String str) //按字典顺序比较两个字符串，不区分大小写
+	```
 
 
 
----
+
 ### StringBuilder 和 StringBuffer
+
+- StringBuilder
+	```
+	java.lang.StringBuilder 又称为可变字符序列，它是一个类似于 String 的字符串缓冲区，通过某些方法调用可以改变该序列的长度和内容。 StringBuilder 是个字符串的缓冲区，即它是一个容器，容器中可以装很多字符 串。并且能够对其中的字符串进行各种操作。
+	```
+	- 添加功能
+		```Java
+		public StringBuilder append(String str)
+		public StringBuilder insert(int offset,String st
+		```
+	- 删除功能
+		```Java
+		public StringBuilder deleteCharAt(int index)
+		public StringBuilder delete(int start,int end)
+		```
+	- 替换功能
+		```Java
+		public StringBuilder replace(int start,int end,String str)
+		```
+	- 反转功能
+		```Java
+		public StringBuilder reverse()
+		```
+
+- StringBuffer
+	```
+	线程安全，可变的字符序列。字符串缓冲区就像一个 String ，但可以修改。在任何时间点，它包含一些特定的字符序列，但可以通过某些方法调用来更改序列的长度和内。方法与 StringBuilder 基本一致，只不过 StringBuffer 线程安全，效率低。
+	```
+	- 添加功能
+		```Java
+		public StringBuffer append(String str)
+		public StringBuffer insert(int offset,String str)
+		```
+	- 删除功能
+		```Java
+		public StringBuffer deleteCharAt(int index)
+		public StringBuffer delete(int start,int end,String str)
+		```
+	- 替换功能
+		```Java
+		public StringBuffer replace(int start,int end,String str)
+		```
+	- 反转功能
+		```Java
+		public StringBuffer reverse()
+		```
+		
 ```
 StringBuilder是可变对象，用来高效拼接字符串；
 StringBuilder可以支持链式操作，实现链式操作的关键是返回实例本身；
@@ -195,91 +168,254 @@ StringBuffer是StringBuilder的线程安全版本，现在很少使用。
 
 
 
+### 时间日期类
+- Date类
+	> java.util.Date 类 表示特定的瞬间，精确到毫秒  
+	- 构造方法
+		```Java
+		public Date();    //分配 Date 对象并初始化此对象，以表示分配它的时间（精确到毫秒）
+		public Date(long date)    //分配 Date 对象并初始化此对象，以表示自从标准基准时间称为“历元（epoch）”，即1970年1月1日00:00:00GMT）以来的指定毫秒数
+		```
+	- 常用方法
+		```Java
+		public long getTime() //把日期对象转换成对应的时间毫秒值
+		```
+- DateFormat类
+	> java.text.DateFormat 是日期/时间格式化子类的抽象类，我们通过这个类可以帮我们完成日期和文本之间的转换,也就是可以在 Date 对象与 String 对象之间进行来回转换。    
+	- 构造方法
+		```Java
+		public SimpleDateFormat(String pattern) //用给定的模式和默认语言环境的日期格式符号构造SimpleDateFormat
+		```
+	- 常用方法
+		```Java
+		public String format(Date date) //将Date对象格式化为字符串
+		public Date parse(String source) //将字符串解析为Date对象
+		```
+
+- Calendar类
+	> java.util.Calendar是日历类，在Date后出现，替换掉了许多Date的方法。该类将所有可能用到的时间信息封装为静态成员变量，方便获取。日历类就是方便获取各个时间属性    
+	- 静态方法
+		```Java
+		public static Calendar getInstance() //使用默认时区和语言环境获得一个日历
+		```
+	- 常用方法
+		```Java
+		public int get(int field) //返回给定日历字段的值
+		public void set(int field, int value) //将给定的日历字段设置为给定值
+		public abstract void add(int field, int amount) //根据日历的规则，为给定的日历字段添加或减去指定的时间
+		public Date getTime() //返回一个表示此Calendar时间值(从历元到现在的毫秒偏移量)的Date对象
+
+		```
+
 
 ### 集合
 
 - List  
-	- void add(E e)  
+	> java.util.List 接口继承自 Collection 接口，是单列集合的一个重要分支，习惯性地会将实现了 List 接口的对象称为 List 集合。在 List 集合中允许出现重复的元素，所有的元素是以一种线性方式进行存储的，在程序中可以通过索来访问集合中的指定元素。另外，List 集合还有一个特点就是元素有序，即元素的存入顺序和取出顺序一致。    
+	- 常用方法
+		> List 作为 Collection 集合的子接口，不但继承了 Collection 接口中的全部方法，而且还增加了一些根据元素索引来操作集合的特有方法，如下:
+		```Java
+		public void add(int index, E element) // 将指定的元素，添加到该集合中的指定位置上
+		public E get(int index) //返回集合中指定位置的元素
+		public E remove(int index) // 移除列表中指定位置的元素, 返回的是被移除的元素。
+		public E set(int index, E element) //用指定元素替换集合中指定位置的元素,返回值的更新前的元素。
 		```
-		在末尾添加一个元素
-		```
-	- void add(int index, E e)  
-		```
-		在指定索引添加一个元素
-		```
+	- ArrayList
+		> java.util.ArrayList 是大小可变的数组的实现，存储在内的数据称为元素。此类提供一些方法来操作内部存储的元素。ArrayList中可不断添加元素，其大小也自动增长。  
 
+		- 构造方法
 
-	- int remove(int index)  
-		```
-		删除指定索引的元素
-		```
-	- int remove(Object e)
-		```
-		删除某个元素
-		```
-	- int size() 
-		```
-		获取链表大小（包含元素的个数）
-		```
-	- E get(int index 
+			```Java
+			ArrayList() //构造一个初始容量为十的空列表。
+			ArrayList(Collection<? extends E> c) //构造一个包含指定集合的元素的列表，按照它们由集合的迭代器返回的顺序。
+			ArrayList(int initialCapacity) //构造具有指定初始容量的空列表。
+			```
 
-		```
-		获取指定索引的元素
-		```
-
-
+	- LinkedList
+		> java.util.LinkedList 集合数据存储的结构是链表结构。方便元素添加、删除的集合，LinkedList 是一个双向链
+		- 构造方法
+			```Java
+			LinkedList() //构造一个空列表
+			LinkedList(Collection<? extends E> c) //构造一个包含指定集合的元素的列表，按照它们由集合的迭代器返回的顺序。
+			```
+		- 常用方法
+			```Java
+			public void addFirst(E e) //将指定元素插入此列表的开头
+			public void addLast(E e) //将指定元素添加到此列表的结尾
+			public E getFirst() //返回此列表的第一个元素
+			public E getLast() //返回此列表的最后一个元素
+			public E removeFirst() //移除并返回此列表的第一个元素
+			public E removeLast() //移除并返回此列表的最后一个元素
+			public E pop() //从此列表所表示的堆栈处弹出一个元素
+			public void push(E e) //将元素推入此列表所表示的堆栈
+			public boolean isEmpty() //如果列表不包含元素，则返回 true
+			```
 
 - Map  
-
-	- Object put(Object k, Object v)  
-
+	> Map 是一种依照键（key）存储元素的容器，键（key）很像下标，在 List 中下标是整数。在 Map 中键（key）可以使任意类型的对象。Map 中不能有重复的键（Key），每个键（key）都有一个对应的值（value）。一个键（key）和它对应的值构成 map 集合中的一个元素
+	- 常用方法
+		```Java
+		public V put(K key, V value)  //把指定的键与指定的值添加到Map集合中
+		public V remove(Object key) //把指定的键所对应的键值对元素在Map 集合中删除，返回被删除元素的值。
+		public V get(Object key) //根据指定的键，在Map集合中获取对应的值
+		public Set<K> keySet() //获取Map 集合中所有的键，存储到Set集合中
+		public Set<Map.Entry<K,V>> entrySet() //获取到 Map 集合中所有的 键值对对象的集合(Set 集合)
 		```
-		将指定的值与此映射中的指定键关联(可选操作)
-		```
-	- void putAll(Map m)
-		```
-		从指定映射中将所有映射关系复制到此映射中(可选操作)
-		```
-	- Set entrySet()
-		```
-		返回此映射中包含的映射关系的Set视图
-		```
-	- Set keySet( )
-		```
-		返回此映射中包含的键的 Set 视图
-		```
-	- Object get(Object k)
-		```
-		返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回null
-		```
-	- int size()
-		```
-		返回此映射中的键-值映射关系数
-		```
+	- Entry键值对对象
+		> Map 中存放的是两种对象，一种称为 key(键)，一种称为value(值)，它们在在Map 中是一一对应关系，这一对对象又称做 Map 中的一个 Entry(项) 。Entry将键值对的对应关系封装成了对象。即键值对对象，这样我们在遍历 Map 集合时，就可以从每一个键值对（ Entry ）对象中获取对应的键与对应的值。在Map集合中也提供了获取所有Entry对象的方法
+		- Entry常用的方法
+			```Java
+			public K getKey() //获取Entry对象中的键
+			public V getValue() //获取Entry对象中的值
+			```
+		- Iterator接口
+			Iterator 迭代器的方式也可以
+			
+	- HashMap
+		> java.util.HashMap 存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。 HashMap 线程是不同步的，可以存入 null 键，null 值。要保证键的唯一性
+	- TreeMap
+		> java.util.TreeMap 是排序的 Map 子类，底层为红黑树，TreeMap 可以对集合中的键进行排序
 
 
 - Set 
-	- boolean add(E e)
-		```
-		如果指定的元素不存在，则将其指定的元素添加（可选操作）
-		```
-	- boolean addAll(Collection<? extends E> c)
-		```
-		将指定集合中的所有元素添加到此集合
-		```
-	- boolean contains(Object o)
-		```
-		如果此集合包含指定的元素，则返回true
-		```  
-	- boolean containsAll(Collection<?> c)
-		```
-		如果此集合包含所有指定集合的元素,则返回true 
-		```  
-	- boolean remove(Object o)
-		```
-		如果存在，则从该集合中删除指定的元素
-		```  
-	- Object[] toArray()
-		```
-		返回一个包含此集合中所有元素的数组
-		```  
+	> java.util.Set 接口和 java.util.List 接口一样，同样继承自 Collection接口，它与 Collection 接口中的方法基本一致，并没有对 Collection 接口进行功能上的扩充，只是比 Collection 接口更加严格了。与 List 接口不同的是，Set接口中元素无序，并且都会以某种规则保证存入的元素不出现重复
+	- HashSet集合
+		> java.util.HashSet是Set接口的一个实现类，它所存储的元素是不可重复的，并且元素都是无序的(即存取顺序不一致)。java.util.HashSet底层的实现其实是一个java.util.HashMap支持
+	- TreeSet
+		> TreeSet 是一个有序的集合，它的作用是提供有序的Set集合。它继承于AbstractSet抽象类，实现了NavigableSet<E>,Cloneable,java.io.Serializable 接口。一种基于TreeMap 的NavigableSet实现。 因为TreeSet继承了AbstractSet抽象类，所以它是一个set集合，可以实例化，且具有set的属性和方法
+
+
+
+- IO流
+	> Java中I/O操作主要是指使用java.io 包下的内容，进行输入、输出操作。输入也叫做读取数据，输出也叫做作写出数据
+	>> 据数据的流向分为：输入流和输出流  
+		>>> 输入流 ：把数据从其他设备上读取到内存中的流  
+		>>> 输出流 ：把数据从内存 中写出到其他设备上的流  
+
+	>> 根据数据的类型分为：字节流和字符流
+		>>> 字节流 ：以字节为单位，读写数据的流  
+		>>> 字符流 ：以字符为单位，读写数据的流
+	- 字节流
+		> 字节为计算机文件基本存储单位，所以字节流可以传输任意文件数据。在操作流的时候，无论使用什么样的流对象，底层传输的始终为二进制数据
+		- OutputStream
+			```Java
+			public void close() //关闭此输出流并释放与此流相关联的任何系统资源
+			public void flush() //刷新此输出流并强制任何缓冲的输出字节被写出
+			public void write(byte[] b) //将 b.length 字节从指定的字节数组写入此输出流
+			public void write(byte[] b, int off, int len) //从指定的字节数组写入len字节，从偏移量 off 开始输出到此输出流
+			public abstract void write(int b) //将指定的字节输出输出流
+			```
+		- InputStream
+			```Java
+			public void close() //关闭此输入流并释放与此流相关联的任何系统资源
+			public abstract int read() //从输入流读取数据的下一个字节
+			public int read(byte[] b) //从输入流中读取一些字节数，并将它们存储到字节数组b中 
+			```
+	- FileOutputStream
+		> java.io.FileOutputStream 类是文件输出流，用于将数据写出到文件
+		- 构造方法
+			```Java
+			public FileOutputStream(File file) //创建文件输出流以写入由指定的 File 对象表示的文件
+			public FileOutputStream(String name) //创建文件输出流以指定的名称写入文件
+			```
+		- 文件数据追加 
+			```Java
+			public FileOutputStream(File file, boolean append) //创建文件输出流以写入由指定的File对象表示的文件
+			public FileOutputStream(String name, boolean append)  //创建文件输出流以指定的名称写入文件
+			```
+	- FileInputStream
+		> java.io.FileInputStream 类是文件输入流，从文件中读取字节
+		- 构造方法
+			```Java
+			FileInputStream(File file) //通过打开与实际文件的连接来创建一个FileInputStream，该文件由文件系统中的File对象file命名。
+			FileInputStream(String name) // 通过打开与实际文件的连接来创建一个FileInputStream ，该文件由文件系统中的路径名name命名
+			```
+	- FileReader
+		> java.io.FileReader 类是读取字符文件的类。构造时使用系统默认的字符编码和默认字节缓冲区
+		- 构造方法
+			```Java
+			FileReader(File file) //创建一个新的FileReader ，给定要读取的File对象
+			FileReader(String fileName) //创建一个新的FileReader ，给定要读取的文件的名称。
+			```
+		- 普通方法
+			```Java
+			//读取字符：read 方法，每次可以读取一个字符的数据，读取到文件末尾，返回-1
+			//使用字符数组读取：read(char[] cbuf)，每次读取b的长度个字符到数组中，返回读取到的有效字符个数，读取到末尾时，返回-1
+
+			```
+
+	- FileWriter
+		> java.io.FileWriter 类是写出字符到文件的便利类。构造时使用系统默认的字符编码和默认字节缓冲区
+		- 构造方法
+			```Java
+			FileWriter(File file) //创建一个新的 FileWriter，给定要读取的 File 对象
+			FileWriter(String fileName) //创建一个新的FileWriter，给定要读取的文件的名称
+			```
+		- 普通方法
+			```Java
+			//写出字符：write(int b)方法，每次可以写出一个字符数据
+			```
+		- 关闭和解析
+			> 因为内置缓冲区的原因，如果不关闭输出流，无法写出字符到文件中。但是关闭的流对象，是无法继续写出数据的。如果我们既想写出数据，又想继续使用流，就需要flush方法
+			```Java
+			flush() //刷新缓冲区，流对象可以继续使用
+			close() //先刷新缓冲区，然后通知系统释放资源。流对象不可以再被使用了
+			//写出字符数组:  write(char[] cbuf) 和 write(char[] cbuf, int off, int len) ，每次可以写出字符数组中的数据
+			//写出字符串: write(String str) 和 write(String str, int off, nt len)，每次可以写出字符串中的数据
+			```
+	- 转换流
+		- InputStreamReader 
+			> 转换流java.io.InputStreamReader ，是Reader 的子类，是从字节流到字符流的桥梁。它读取字节，并使用指定的字符集将其解码为字符。它的字集可以由名称指定，也可以接受平台的默认字符集
+			- 构造方法
+				```Java
+				InputStreamReader(InputStream in) //创建一个使用默认字符集的字符流
+				InputStreamReader(InputStream in, String charsetName) //创建一个指定字符集的字符流
+				```
+		- OutputStreamWriter
+			> 转换流java.io.OutputStreamWriter，是Writer的子类，是从字符流到字节流的桥梁。使用指定的字符集将字符编码为字节。它的字符集可以由名称指定，也可以接受平台的默认字符集
+			- 构造方法
+				```Java
+				OutputStreamWriter(OutputStream in) //创建一个使用默认字符集的字符流
+				OutputStreamWriter(OutputStream in, String charsetName) //创建一个指定字符集的字符流
+				```
+
+	- 缓冲流
+		- 字节缓冲流
+			```Java
+			public BufferedInputStream(InputStream in) //创建一个新的缓输入流
+			public BufferedOutputStream(OutputStream out) //创建一个新缓冲输出流
+			```
+		- 字符缓冲流
+			```Java
+			public BufferedReader(Reader in) //创建一个新的缓冲输入流
+			public BufferedWriter(Writer out) //创建一个新的缓冲输出流
+			//BufferedReader
+			public String readLine() //读一行文字
+			//BufferedWriter
+			public void newLine() //写一行行分隔符,由系统
+属性定义符号。
+			```
+
+
+- 线程与进程
+	- 进程
+		> 指一个内存中运行的应用程序，每个进程都有一个独立的内存空间，一个应用程序可以同时运行多个进程；进程也是程序的一次执行过程，是系统运行程序的基本单位；系统运行一个程序即是一个进程从创建、运行到消亡的过程。
+	- 线程
+		> 线程是进程中的一个执行单元，负责当前进程中程序的执行，一个进程中至少有一个线程。一个进程中是可以有多个线程的，这个应用程序也可以称之为多线程程序
+	> 一个程序运行后至少有一个进程，一个进程中可以包含多个线程
+	- Thread
+		- 构造方法
+			```Java
+			public Thread() //分配一个新的线程对象
+			public Thread(String name) //分配一个指定名字的新的线程对象
+			public Thread(Runnable target) //分配一个带有指定目标新的线程对象
+			public Thread(Runnable target,String name) //分配一个带有指定目标新的线程对象并指定名字
+			```
+		- 常用方法
+			```Java
+			public String getName() //获取当前线程名称
+			public static Thread currentThread() //返回对当前正在执行的线程对象的引用
+			public void start() //导致此线程开始执行; Java 虚拟机调用此线程的run方法
+			public void run() //此线程要执行的任务在此处定义代码。
+			public static void sleep(long millis) //使当前正在执行的线程以指定的毫秒数暂停。
+			```
